@@ -1,11 +1,11 @@
 ### 🧩 CẤU HÌNH NHANH (chỉ cần sửa tại đây)
 
 CONFIG={
-  TITLE:"Dịch vụ thuê xe máy Hoàn Kiếm – Nguyễn Tú",
+  TITLE:"Dịch vụ thuê xe máy Long Biên – Hà Nội",
   DOMAIN:"https://motoopen.github.io/thuexemayohoankiem",
   PHONE:"0942467674",
   ZALO:"https://zalo.me/0942467674",
-  EMAIL:"contact@example.com",
+  EMAIL:"thuexemaynguyentu@gmail.com",
   ADDRESS:"112 Nguyễn Văn Cừ, Long Biên, Hà Nội",
   LOGO_URL:"https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png",
   MAIN_COLOR:"#0A84FF"
