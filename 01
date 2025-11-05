@@ -1,3 +1,14 @@
+Bạn hãy tạo 1 file index.html duy nhất (HTML5, responsive, mobile-first)
+
+Yêu cầu chung:
+	1.	HTML + CSS + JS đều inline (không dùng jQuery, không Bootstrap).
+	2.	Được link đúng 3 font CDN và phải preload + có <noscript>:
+	•	Inter
+	•	Material Symbols Rounded
+	•	Font Awesome 6 Free
+	3.	Có đầy đủ meta SEO/OG/Twitter/canonical/robots/theme-color.
+	4.	Có dark / light mode bằng nút bấm, lưu localStorage.
+
 ### 🧩 CẤU HÌNH NHANH (chỉ cần sửa tại đây)
 
 CONFIG={
