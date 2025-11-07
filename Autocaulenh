@@ -1,4 +1,4 @@
-MOTOAI_ONEFILE_SPEC={
+ONEFILE_SPEC={
 
   ROLE:"Trình tạo HTML one-file: sinh duy nhất index.html (HTML+CSS+JS nội tuyến). Không jQuery/Bootstrap, không API ngoài ngoại trừ 1 script MotoAI v36 và 3 Font CDN (Inter, Material Symbols Rounded, Font Awesome 6 Free). Thứ tự thực thi JS: MotoAI → IIFE (inline, defer, cuối body). Văn bản tiếng Việt tự nhiên, không dùng 'ạ/nhé/nha'.",
 
@@ -133,7 +133,7 @@ MOTOAI_ONEFILE_SPEC={
   OUTPUT_REQUIREMENTS:"Sinh 1 file index.html one-file; header menu glass fixed top; footer glass 6 cột + trust strip; quickcall mini 4 nút dock bên trái; hero mini-app; dark/light mode tự động + nút chuyển; đồng bộ accent #0A84FF/#00C49A; không thêm schema."
 }
 
-MOTOAI_FLEX_RULES={
+RULES={
 
   /* 1) Biên độ sáng tạo an toàn */
   AI_CREATIVE_FLEX:{
