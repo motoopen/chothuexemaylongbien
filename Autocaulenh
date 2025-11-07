@@ -1,0 +1,135 @@
+MOTOAI_ONEFILE_SPEC={
+
+  ROLE:"Trình tạo HTML one-file: sinh duy nhất index.html (HTML+CSS+JS nội tuyến). Không jQuery/Bootstrap, không API ngoài ngoại trừ 1 script MotoAI v36 và 3 Font CDN (Inter, Material Symbols Rounded, Font Awesome 6 Free). Thứ tự thực thi JS: MotoAI → IIFE (inline, defer, cuối body). Văn bản tiếng Việt tự nhiên, không dùng 'ạ/nhé/nha'.",
+
+  ALLOWLIST:{EXTERNAL_SCRIPTS:["MotoAI_v36"], FONTS:["Inter","MaterialSymbolsRounded","FontAwesome6Free"]},
+
+  META:{
+    TITLE:"Dịch vụ cho thuê xe máy Hoàn Kiếm, Hà Nội – Nguyễn Tú",
+    DESCRIPTION:"Thuê xe máy Hà Nội giá rẻ, uy tín – Nguyễn Tú. Xe ga, xe số, xe điện, giao nhanh 20–40 phút, cọc nhẹ, hỗ trợ 24/7.",
+    KEYWORDS:"thuê xe máy, thuê xe máy Hà Nội, thuê xe máy Hoàn Kiếm, Nguyễn Tú, thuê xe ga, thuê xe số, thuê xe điện",
+    AUTHOR:"Nguyễn Tú Cho thuê xe máy Hà Nội",
+    CANONICAL:"https://motoopen.github.io/thuexemayohoankiem/index.html",
+    THEME_COLOR:"#0A84FF",
+    ROBOTS:"index, follow",
+    OG_IMAGE_URL:"https://thuexemaynguyentu.com/wp-content/uploads/2025/09/BANNER-THUE-XE-MAY-1.png"
+  },
+
+  META_EXTRA:{OG_TYPE:"website", TWITTER_CARD:"summary_large_image", TWITTER_SITE:"@thuexemaynguyentu", PUBLISHER:"https://thuexemaynguyentu.com", MESSENGER_PREVIEW:true, ZALO_PREVIEW:true},
+
+  CONTACT:{PHONE:"+84942467674", ZALO:"https://zalo.me/0942467674", WHATSAPP:"https://wa.me/84942467674", MAP:"https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc", EMAIL:"thuexemaynguyentu@gmail.com", ADDRESS:"112 Nguyễn Văn Cừ, Long Biên, Hà Nội", LOGO_URL:"https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png"},
+
+  STYLE_SYSTEM:{
+    DEFAULT_THEME:"UltraTitanGlass",
+    LANG:"vi",
+    BRAND_SYNC:{ENABLED:true, LOCK_ACCENT:true, ACCENT:"#0A84FF", ACCENT2:"#00C49A"},
+    GLASS:{ENABLED:true, BLUR:"10px", SHADOW:"0 4px 20px rgba(0,0,0,0.1)"},
+    RADIUS_BASE:"20px",
+    BODY_BG:{LIGHT:"#f9fafa", DARK:"#0c0d0f"},
+    TYPOGRAPHY:{BASE:"Inter", SCALE:1.12},
+    RESOLVE_ORDER:"manual > time_map > randomizer > fallback",
+    RANDOMIZER:{ENABLED:true, SEED:null, POOL:"ALL"},
+    TIME_THEME_MAP:{MORNING:"NeoMint", AFTERNOON:"AeroGlassBlue", EVENING:"SunsetOrange", NIGHT:"MotoDarkCarbon"},
+    DRIFT:{ENABLED:true, MODE:"time", SPEED:"slow", ACCENT_WAVE:["#0A84FF","#0099FF","#00C49A","#4FC3F7"]},
+    MOTION:{EASE:"cubic-bezier(.25,.1,.25,1)", DURATION_SCALE:1.0, CARD_TILT:true, RIPPLE:true, HOVER_GLOW:true},
+    COMPONENTS:{HEADER:["glass","solid","underline"], FOOTER:["glass"], CARD:["elevated","outline","flat"], BUTTON:["solid","outline","ghost"], INPUT:["soft","underline"]},
+    PRESETS:[
+      {NAME:"UltraTitanGlass",ACCENT:"#0A84FF",ACCENT2:"#00C49A",RADIUS:"20px",GLASS:1,GRADIENT:["#0A84FF","#1B5FFF"]},
+      {NAME:"FacebookUltra",ACCENT:"#1877F2",ACCENT2:"#42B72A",RADIUS:"16px",GLASS:1,GRADIENT:["#1877F2","#3B5998"]},
+      {NAME:"NeoMint",ACCENT:"#42E2B8",ACCENT2:"#2BC0A3",RADIUS:"18px",GLASS:1,GRADIENT:["#7FFFD4","#22C1C3"]},
+      {NAME:"MidnightPurple",ACCENT:"#7A5AF8",ACCENT2:"#B794F4",RADIUS:"18px",GLASS:1,GRADIENT:["#2B1055","#7597DE"]},
+      {NAME:"AeroGlassBlue",ACCENT:"#1B5FFF",ACCENT2:"#00B4FF",RADIUS:"20px",GLASS:1,GRADIENT:["#0EA5FF","#7BD5FF"]},
+      {NAME:"SunsetOrange",ACCENT:"#FF6A3D",ACCENT2:"#FF9E2C",RADIUS:"18px",GLASS:1,GRADIENT:["#FF512F","#F09819"]},
+      {NAME:"MotoDarkCarbon",ACCENT:"#00C49A",ACCENT2:"#14B8A6",RADIUS:"20px",GLASS:1,GRADIENT:["#0B0F14","#11202A"]},
+      {NAME:"MinimalWhite",ACCENT:"#111827",ACCENT2:"#374151",RADIUS:"14px",GLASS:0,GRADIENT:["#FFFFFF","#F7FAFC"]},
+      {NAME:"GoogleBright",ACCENT:"#1A73E8",ACCENT2:"#34A853",RADIUS:"16px",GLASS:1,GRADIENT:["#1A73E8","#4285F4"]},
+      {NAME:"HondaRed",ACCENT:"#E4002B",ACCENT2:"#FF5A5F",RADIUS:"16px",GLASS:0,GRADIENT:["#C8102E","#F44336"]},
+      {NAME:"YamahaBlue",ACCENT:"#0033A0",ACCENT2:"#1E40AF",RADIUS:"16px",GLASS:0,GRADIENT:["#0033A0","#2563EB"]},
+      {NAME:"KawasakiGreen",ACCENT:"#00AD43",ACCENT2:"#22C55E",RADIUS:"16px",GLASS:0,GRADIENT:["#00AD43","#16A34A"]},
+      {NAME:"AppleSilver",ACCENT:"#A3A3A3",ACCENT2:"#D4D4D4",RADIUS:"12px",GLASS:1,GRADIENT:["#ECECEC","#DADFE3"]},
+      {NAME:"TeslaCrimson",ACCENT:"#CC0000",ACCENT2:"#FF3B30",RADIUS:"16px",GLASS:0,GRADIENT:["#8B0000","#CC0000"]},
+      {NAME:"BMWSteel",ACCENT:"#1C69D4",ACCENT2:"#2E2E2E",RADIUS:"14px",GLASS:1,GRADIENT:["#1C69D4","#0A2239"]},
+      {NAME:"MercedesBlue",ACCENT:"#00ADEF",ACCENT2:"#0E7490",RADIUS:"14px",GLASS:1,GRADIENT:["#00ADEF","#38BDF8"]},
+      {NAME:"CyberSteel",ACCENT:"#00E5FF",ACCENT2:"#00FFC6",RADIUS:"18px",GLASS:1,GRADIENT:["#111827","#0EA5A4"]},
+      {NAME:"EmeraldGlow",ACCENT:"#10B981",ACCENT2:"#34D399",RADIUS:"18px",GLASS:1,GRADIENT:["#064E3B","#10B981"]},
+      {NAME:"AuroraGradient",ACCENT:"#7DE2FC",ACCENT2:"#B9B6E5",RADIUS:"20px",GLASS:1,GRADIENT:["#7DE2FC","#B9B6E5"]},
+      {NAME:"GalaxyGlass",ACCENT:"#6366F1",ACCENT2:"#06B6D4",RADIUS:"20px",GLASS:1,GRADIENT:["#0F172A","#334155"]},
+      {NAME:"OceanMist",ACCENT:"#38BDF8",ACCENT2:"#22D3EE",RADIUS:"18px",GLASS:1,GRADIENT:["#0EA5E9","#22D3EE"]},
+      {NAME:"CarbonWave",ACCENT:"#14B8A6",ACCENT2:"#06B6D4",RADIUS:"20px",GLASS:1,GRADIENT:["#0B1020","#0F172A"]},
+      {NAME:"LavaGlow",ACCENT:"#FB4B1D",ACCENT2:"#FF7A59",RADIUS:"18px",GLASS:1,GRADIENT:["#7F1D1D","#FB4B1D"]},
+      {NAME:"FrostedPearl",ACCENT:"#93C5FD",ACCENT2:"#E5E7EB",RADIUS:"16px",GLASS:1,GRADIENT:["#EEF2FF","#E5E7EB"]},
+      {NAME:"SakuraBlush",ACCENT:"#FF6B9A",ACCENT2:"#FFC1D6",RADIUS:"18px",GLASS:1,GRADIENT:["#FFE4EC","#FFD1E1"]},
+      {NAME:"CitrusPop",ACCENT:"#FFB703",ACCENT2:"#FB8500",RADIUS:"16px",GLASS:1,GRADIENT:["#FFF4CE","#FFE8A3"]},
+      {NAME:"ForestMoss",ACCENT:"#65A30D",ACCENT2:"#4D7C0F",RADIUS:"18px",GLASS:0,GRADIENT:["#0F2E1F","#134E4A"]},
+      {NAME:"RoyalIndigo",ACCENT:"#4C1D95",ACCENT2:"#7C3AED",RADIUS:"18px",GLASS:1,GRADIENT:["#1E1B4B","#4C1D95"]},
+      {NAME:"CopperSun",ACCENT:"#B45309",ACCENT2:"#D97706",RADIUS:"16px",GLASS:1,GRADIENT:["#1F1300","#B45309"]},
+      {NAME:"SlateMono",ACCENT:"#0F172A",ACCENT2:"#334155",RADIUS:"12px",GLASS:0,GRADIENT:["#FFFFFF","#F1F5F9"]},
+      {NAME:"CandyPop",ACCENT:"#EC4899",ACCENT2:"#F97316",RADIUS:"20px",GLASS:1,GRADIENT:["#FF9A9E","#FAD0C4"]},
+      {NAME:"NeonNoir",ACCENT:"#22D3EE",ACCENT2:"#A78BFA",RADIUS:"18px",GLASS:1,GRADIENT:["#0B0B1F","#1F1147"]}
+    ],
+    FALLBACK:"UltraTitanGlass"
+  },
+
+  HEADER_POLICY:{
+    TYPE:"fixed-glass", HEIGHT:"70px",
+    BRAND:{ICON:"NT", NAME:"Thuê xe máy – Nguyễn Tú", SUB:"Hoàn Kiếm, Long Biên, Hà Nội"},
+    NAV:{ID:"app-navigation", ROLE:"navigation", ARIA_LABEL:"Điều hướng chính", IN_HTML:true},
+    MOBILE:{TOGGLE_SELECTOR:".menu-toggle", ARIA_CONTROLS:"app-navigation", ARIA_EXPANDED_DEFAULT:false, AUTO_CLOSE_ON_LINK:true, SUBMENU_BY_JS:true},
+    DESKTOP:{SUBMENU_BY_HOVER:true, SUBMENU_BY_FOCUS:true, NO_WRAP_IN_EXTRA_CONTAINER:true}
+  },
+
+  MENU:[
+    {"🏠 Trang chủ":"./"},
+    {"📄 Giới thiệu":"gioithieu.html"},
+    {"⚙️ Dịch vụ":[
+      {"🏷️ Bảng giá":"banggia.html"},
+      {"📅 Theo ngày":"ngay.html"},
+      {"🗓️ Theo tuần":"tuan.html"},
+      {"📆 Theo tháng":"thang.html"},
+      {"🎁 Ưu đãi":"uudai.html"},
+      {"📑 Thủ tục":"thutuc.html"},
+      {"💰 Đặt cọc":"datcoc.html"},
+      {"📍 Địa điểm (hub)":"diadiem.html"}
+    ]},
+    {"📍 Địa điểm":[
+      {"Long Biên":"longbien.html"},{"Gia Lâm":"gialam.html"},{"Phố Cổ":"phoco.html"},{"Hoàn Kiếm":"hoankiem.html"},
+      {"Ba Đình":"badinh.html"},{"Tây Hồ":"tayho.html"},{"Đống Đa":"dongda.html"},{"Cầu Giấy":"caugiay.html"},
+      {"Hà Đông":"hadong.html"},{"Thanh Xuân":"thanhxuan.html"},{"Từ Liêm":"tuliem.html"},{"Ga Hà Nội":"gahn.html"}
+    ]},
+    {"❓ FAQ":"faq.html"},
+    {"💬 Liên hệ":"lienhe.html"},
+    {"📜 Điều khoản":"dieukhoansudung.html"},
+    {"🔒 Chính sách":"chinhsachbaomat.html"}
+  ],
+
+  BODY_SECTIONS:{USE_FADEIN:true, USE_SCROLL_ANIM:true, SOURCE:"theo nội dung bạn đã cung cấp (intro/benefits/steps/testimonials/places/links/faq/cta)"},
+
+  FOOTER:{
+    STYLE:"glass", GRID:{DESKTOP:6, TABLET:3, MOBILE:2},
+    TAGLINE:{TITLE:"Thuê xe máy uy tín – Nguyễn Tú", DESC:"Giao xe 20–40 phút • Giá minh bạch • Giấy tờ đầy đủ • Hỗ trợ 24/7"},
+    COLS:{
+      col1_TrangChu:[{"🏠 Trang chủ":"./"},{"📄 Giới thiệu":"gioithieu.html"}],
+      col2_DichVu:[{"🏷️ Bảng giá":"banggia.html"},{"📅 Theo ngày":"ngay.html"},{"🗓️ Theo tuần":"tuan.html"},{"📆 Theo tháng":"thang.html"},{"🎁 Ưu đãi":"uudai.html"},{"📑 Thủ tục":"thutuc.html"},{"💰 Đặt cọc":"datcoc.html"}],
+      col3_DiaDiem:[{"Long Biên":"longbien.html"},{"Gia Lâm":"gialam.html"},{"Phố Cổ":"phoco.html"},{"Hoàn Kiếm":"hoankiem.html"},{"Ba Đình":"badinh.html"},{"Tây Hồ":"tayho.html"},{"Đống Đa":"dongda.html"},{"Cầu Giấy":"caugiay.html"},{"Hà Đông":"hadong.html"},{"Thanh Xuân":"thanhxuan.html"},{"Từ Liêm":"tuliem.html"},{"Ga Hà Nội":"gahn.html"}],
+      col4_ThongTin:[{"❓ FAQ":"faq.html"},{"📜 Điều khoản sử dụng":"dieukhoansudung.html"},{"🔒 Chính sách bảo mật":"chinhsachbaomat.html"}],
+      col5_LienHe:[{"💬 Liên hệ":"lienhe.html"},{"🌐 Website":"https://thuexemaynguyentu.com"},{"📞 Gọi":"tel:+84942467674"},{"💬 Zalo":"https://zalo.me/0942467674"},{"🟢 WhatsApp":"https://wa.me/84942467674"}],
+      col6_Social:[{"Facebook":"https://m.facebook.com/chothuexemay0857255868/"},{"Instagram":"https://www.instagram.com/nguyentumotorbike/"},{"YouTube":"https://www.youtube.com/channel/UCvUBwV24U4c5-q1iJ-ZL0Rg"},{"TripAdvisor":"https://www.tripadvisor.com.vn/Attraction_Review-g21333608-d9826317-Reviews-Nguyen_Tu_Motorbike_Rental-Long_Bien_Hanoi.html"}]
+    },
+    TRUST_STRIP:"⭐ 4.9/5 từ khách hàng • Giao xe 20–40 phút • Hỗ trợ 24/7 • Xe bảo dưỡng định kỳ",
+    QUICKCALL_DOCK:{SIDE:"left", TOGGLE:true, BUTTONS:[{"📍 Bản đồ":"https://maps.google.com/?q=112%20Nguyen%20Van%20Cu%20Long%20Bien%20Ha%20Noi"},{"💬 Zalo":"https://zalo.me/0942467674"},{"📞 Gọi":"tel:+84942467674"},{"🟢 WhatsApp":"https://wa.me/84942467674"}]},
+    SOCIAL_STYLE:{CONTAINER:".social-inline", SIZE:34, RADIUS:14, GLASS:true, ICON_COLOR:"currentColor", HOVER:{ACCENT:"var(--accent)", TEXT:"#fff", LIFT:2, SHADOW:"0 6px 20px rgba(10,132,255,0.35)"}, DARK_GLASS:"rgba(12,13,15,0.35)"}
+  },
+
+  SMART_SEO:{AUTO_KEYWORDS:true, LINK_DENSITY_MAX:5, AUTO_INTERNAL_LINK:true, TITLE_MATCH_H1:true, REL_CANONICAL_FIX:true, LAZY_OG:true, AUTO_META_REWRITE:false},
+
+  PERF_HINTS:{LAZYLOAD:{TARGETS:["img","iframe"], PLACEHOLDER:"blur"}, SCROLL_SMOOTH:true, VIEW_TRANSITIONS:true},
+
+  FRAMEWORK_LOCK:{JQUERY:false, BOOTSTRAP:false, API_OUTSIDE:false, EXTERNAL_WHITELIST:["MotoAI_v36","GoogleFonts_Inter","GoogleFonts_MaterialSymbolsRounded","FontAwesome6FreeCDN"]},
+
+  RUNTIME_POLICY:{NAV_IN_HTML:true, RENDER_FROM_JSON:true, SCRIPT_ORDER:["MotoAI","mainIIFE"], DEFER:true},
+
+  CONTENT_LOCKS:"Không thay đổi nội dung/số lượng/thứ tự/emoji của MENU và FOOTER. Phải render đủ cả hai, độc lập.",
+
+  OUTPUT_REQUIREMENTS:"Sinh 1 file index.html one-file; header menu glass fixed top; footer glass 6 cột + trust strip; quickcall mini 4 nút dock bên trái; hero mini-app; dark/light mode tự động + nút chuyển; đồng bộ accent #0A84FF/#00C49A; không thêm schema."
+}
+
