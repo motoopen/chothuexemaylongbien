@@ -133,3 +133,119 @@ MOTOAI_ONEFILE_SPEC={
   OUTPUT_REQUIREMENTS:"Sinh 1 file index.html one-file; header menu glass fixed top; footer glass 6 cột + trust strip; quickcall mini 4 nút dock bên trái; hero mini-app; dark/light mode tự động + nút chuyển; đồng bộ accent #0A84FF/#00C49A; không thêm schema."
 }
 
+MOTOAI_FLEX_RULES={
+
+  /* 1) Biên độ sáng tạo an toàn */
+  AI_CREATIVE_FLEX:{
+    ALLOWED:[
+      "thêm block nhỏ (badge, chip, note, trust-point) có ICON",
+      "thêm CTA phụ (không thay thế CTA chính)",
+      "thêm biến thể layout hero (centered/side-image) và card (elevated/outline)",
+      "thêm hiệu ứng vi mô: ripple / hover-glow / subtle parallax nội bộ (không dùng thư viện ngoài)"
+    ],
+    NOT_ALLOWED:[
+      "thay đổi nội dung/số lượng/thứ tự/emoji của MENU và FOOTER",
+      "ẩn/loại bỏ mục đã khai báo",
+      "thêm script hoặc API ngoài ngoài whitelist"
+    ],
+    WHEN_UNSURE:"giữ nguyên đặc tả và ưu tiên hiệu ứng trình bày"
+  },
+
+  /* 2) Chính sách ICON bắt buộc (cho link mới AI tự thêm) */
+  ICON_POLICY:{
+    REQUIRED:true,
+    SOURCES:["MaterialSymbolsRounded","FontAwesome6Free","Emoji"],
+    SIZE_PX:18,
+    FALLBACK:"Emoji",
+    NO_TEXT_ONLY_ICON:true,
+    CONSISTENCY:"đồng bộ kích thước/line-height/spacing"
+  },
+
+  /* 3) Vị trí & đồng bộ menu/footer khi AI thêm link mới */
+  SURFACE_MAPPING:{
+    NEW_LINKS_MUST_APPEAR_IN:["hero_cta","body_cards","footer_extra"],
+    ALSO_LIST_IN_FOOTER_COL:"col5_LienHe", /* nếu là kênh liên hệ */
+    MENU_UNTOUCHED:true, FOOTER_BASE_UNTOUCHED:true
+  },
+
+  /* 4) Hiệu ứng 'Fade-in Ultra' & chuyển cảnh mượt */
+  ANIMATION_POLICY:{
+    FADE_IN_ULTRA:{ENABLED:true, DURATION_MS:520, EASING:"cubic-bezier(.25,.1,.25,1)", STAGGER_MS:60, GPU_TRANSFORMS_ONLY:true},
+    RIPPLE:{ENABLED:true, MAX_OPACITY:0.18, RADIUS_AUTO:true},
+    VIEW_TRANSITIONS:true,
+    PREFERS_REDUCED_MOTION_RESPECT:true  /* tắt/giảm hiệu ứng nếu người dùng chọn giảm chuyển động */
+  },
+
+  /* 5) Dark/Light Mode + chuyển tức thì */
+  THEME_MODE_POLICY:{
+    AUTO:true, TOGGLE:true,
+    TRANSITION_MS:220,
+    COLOR_SCHEME_META:true,
+    NO_FOUC:true, /* tránh nháy style khi đổi theme */
+    SYNC_ACCENT_WITH_BRAND:true
+  },
+
+  /* 6) Mini-app bắt buộc (triển khai linh hoạt nhưng đủ chức năng) */
+  MINI_APPS:{
+    QUICK_CALL:{
+      REQUIRED:true, SIDE:"left", TOGGLE:true,
+      BUTTONS:["map","zalo","call","whatsapp"],  /* dùng CONTACT/FOOTER_CONFIG mapping sẵn */
+      DO_NOT_BLOCK_CONTENT:true
+    },
+    MENU_MINI:{
+      REQUIRED:true,
+      MOBILE_PRESENTATION:"sheet-or-overlay",
+      AUTO_CLOSE_ON_LINK:true, FOCUS_TRAP:true
+    },
+    HERO_MINI:{
+      REQUIRED:true,
+      ELEMENTS:["headline","subtext","primary_cta","secondary_cta","info_chip"],
+      CAN_SHOW_TRUST_BADGE:true
+    }
+  },
+
+  /* 7) Responsive cứng: 3 điểm gãy + safe areas */
+  RESPONSIVE_POLICY:{
+    BREAKPOINTS:{MOBILE_MAX:480, TABLET_MAX:1024, DESKTOP_MIN:1025},
+    MOBILE_FIRST:true,
+    TAP_TARGET_MIN:44,
+    SAFE_AREA_INSETS:true,    /* tránh đè tai thỏ / thanh điều hướng */
+    NO_HORIZONTAL_SCROLL:true
+  },
+
+  /* 8) Accessibility bắt buộc */
+  A11Y:{
+    CONTRAST_MIN:"4.5:1",
+    FOCUS_VISIBLE:true,
+    NAV_LANDMARKS:["header","nav#app-navigation","main","footer"],
+    ARIA_MOBILE_MENU:{"aria-controls":"app-navigation","aria-expanded":false}
+  },
+
+  /* 9) Performance guard (giữ mượt 60fps) */
+  PERFORMANCE_GUARDS:{
+    INLINE_CSS_BUDGET_KB:35,
+    INLINE_JS_BUDGET_KB:25,
+    LAZYLOAD_TARGETS:["img","iframe"],
+    NO_LAZY_FOR:["svg","icon"],
+    AVOID_LAYOUT_THRASHING:true,
+    DEFER_MAIN_IIFE:true
+  },
+
+  /* 10) SEO mềm (không viết lại nội dung) */
+  SOFT_SEO:{
+    AUTO_INTERNAL_LINK:true,
+    LINK_DENSITY_MAX:5,
+    TITLE_MATCH_H1:true,
+    NO_META_REWRITE:true,
+    CANONICAL_RESPECT:true
+  },
+
+  /* 11) Social strip & icon glass đẹp (áp cho footer) */
+  SOCIAL_STYLE_HINTS:{
+    CONTAINER:".social-inline",
+    SHAPE:{W:34,H:34,RADIUS:14},
+    GLASS:true, BACKDROP_BLUR:8,
+    HOVER:{BG:"var(--accent)", TEXT:"#fff", LIFT_PX:2, SHADOW:"0 6px 20px rgba(10,132,255,0.35)"},
+    DARK_GLASS:"rgba(12,13,15,0.35)"
+  }
+}
