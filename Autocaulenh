@@ -174,7 +174,165 @@ ONEFILE_SPEC={
     {"🔒 Chính sách":"chinhsachbaomat.html"}
   ],
 
-  BODY_SECTIONS:{USE_FADEIN:true, USE_SCROLL_ANIM:true, SOURCE:"theo nội dung bạn đã cung cấp (intro/benefits/steps/testimonials/places/links/faq/cta)"},
+  BODY_MANIFEST={
+  USE_FADEIN:true,
+  USE_SCROLL_ANIM:true,
+  ANCHOR_ORDER:["home","gioithieu","banggia-teaser","quytrinh","dia-diem","reviews","faq","cta","lienhe"],
+  MICRO_INTERACTIONS:{CARD_TILT:true,HOVER_GLOW:true,RIPPLE:true,STAGGER_MS:60},
+
+  SECTIONS:[
+
+    /* 0) HERO mini-app (Smart Hero Gateway) */
+    {
+      ID:"home", TYPE:"hero_gateway",
+      HEADLINE:"Thuê xe máy Hà Nội – giao nhanh 20–40 phút",
+      SUBTEXT:"Xe ga, xe số, xe điện • Giá minh bạch • Hỗ trợ 24/7",
+      BADGES:["Uy tín tại Hoàn Kiếm – Long Biên","Cọc nhẹ, thủ tục đơn giản"],
+      PRIMARY_CTA:{"label":"📞 Gọi ngay","href":"tel:+84942467674"},
+      SECONDARY_CTA:{"label":"💬 Zalo","href":"https://zalo.me/0942467674"},
+      TERTIARY_LINKS:[
+        {"label":"📍 Xem bản đồ","href":"https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc"},
+        {"label":"🏷️ Bảng giá tổng","href":"banggia.html"}
+      ],
+      INFO_CHIPS:["Giao xe tận nơi","Xe bảo dưỡng định kỳ","Hỗ trợ tiếng Anh"],
+      MEDIA_HINT:{STYLE:"glass",POSITION:"right",ALLOW_PLACEHOLDER:true}
+    },
+
+    /* 1) Giới thiệu ngắn */
+    {
+      ID:"gioithieu", TYPE:"intro",
+      TITLE:"Dịch vụ cho thuê xe máy uy tín tại Hà Nội",
+      PARAGRAPHS:[
+        "Phục vụ du khách, dân văn phòng, người đi công tác.",
+        "Linh hoạt lựa chọn xe ga, xe số, xe điện theo nhu cầu."
+      ],
+      QUICK_LINKS:[
+        {"label":"📄 Giới thiệu chi tiết","href":"gioithieu.html"},
+        {"label":"📑 Thủ tục thuê","href":"thutuc.html"}
+      ]
+    },
+
+    /* 2) Lợi ích nổi bật */
+    {
+      ID:"benefits", TYPE:"benefits",
+      TITLE:"Vì sao chọn Nguyễn Tú?",
+      POINTS:[
+        "Xe mới – sạch – bảo dưỡng thường xuyên",
+        "Giao xe đúng hẹn, hỗ trợ 24/7",
+        "Giá rõ ràng, không chi phí ẩn",
+        "Giao/nhận linh hoạt tại khách sạn, homestay, nhà riêng"
+      ]
+    },
+
+    /* 3) Teaser Bảng giá (đẩy về các trang giá) */
+    {
+      ID:"banggia-teaser", TYPE:"pricing_teaser",
+      TITLE:"Bảng giá tham khảo",
+      DESCRIPTION:"Xem chi tiết từng gói theo ngày/tuần/tháng.",
+      CARDS:[
+        {"icon":"📅","name":"Theo ngày","desc":"Linh hoạt, trả xe thuận tiện","href":"ngay.html"},
+        {"icon":"🗓️","name":"Theo tuần","desc":"Tiết kiệm cho nhu cầu dài hơn","href":"tuan.html"},
+        {"icon":"📆","name":"Theo tháng","desc":"Kinh tế cho ở lại lâu","href":"thang.html"}
+      ],
+      MORE_LINK:{"label":"🏷️ Bảng giá tổng","href":"banggia.html"},
+      POLICY_LINK:{"label":"🧾 Chính sách giá","href":"chinhsach.html"}
+    },
+
+    /* 4) Quy trình */
+    {
+      ID:"quytrinh", TYPE:"steps",
+      TITLE:"Quy trình thuê xe đơn giản",
+      STEPS:[
+        "Chọn loại xe và gói thời gian phù hợp",
+        "Liên hệ Zalo hoặc gọi xác nhận",
+        "Giao xe tại điểm hẹn 20–40 phút",
+        "Kiểm tra xe • ký nhận • sử dụng"
+      ],
+      SIDE_LINKS:[
+        {"label":"🎁 Ưu đãi","href":"uudai.html"},
+        {"label":"💰 Đặt cọc","href":"datcoc.html"}
+      ]
+    },
+
+    /* 5) Địa điểm phục vụ (12 quận/khu nổi bật) */
+    {
+      ID:"dia-diem", TYPE:"locations_grid",
+      TITLE:"Khu vực phục vụ nổi bật tại Hà Nội",
+      ITEMS:[
+        {"name":"Long Biên","href":"longbien.html"},
+        {"name":"Gia Lâm","href":"gialam.html"},
+        {"name":"Phố Cổ","href":"phoco.html"},
+        {"name":"Hoàn Kiếm","href":"hoankiem.html"},
+        {"name":"Ba Đình","href":"badinh.html"},
+        {"name":"Tây Hồ","href":"tayho.html"},
+        {"name":"Đống Đa","href":"dongda.html"},
+        {"name":"Cầu Giấy","href":"caugiay.html"},
+        {"name":"Hà Đông","href":"hadong.html"},
+        {"name":"Thanh Xuân","href":"thanhxuan.html"},
+        {"name":"Từ Liêm","href":"tuliem.html"},
+        {"name":"Ga Hà Nội","href":"gahn.html"}
+      ],
+      NOTE:"'📍 Địa điểm (hub)' ở menu trỏ tới diadiem.html"
+    },
+
+    /* 6) Cảm nhận khách hàng */
+    {
+      ID:"reviews", TYPE:"testimonials",
+      TITLE:"Khách hàng nói gì?",
+      REVIEWS:[
+        {"name":"Linh – Du khách","stars":5,"text":"Xe đẹp, giao nhanh, giá hợp lý."},
+        {"name":"Đức – Freelancer","stars":5,"text":"Đi êm, tiết kiệm xăng, hỗ trợ tốt."},
+        {"name":"Sarah – Traveller","stars":4,"text":"Easy to rent, fast delivery, helpful staff."}
+      ],
+      CAN_SHOW_TRUST_BADGE:true
+    },
+
+    /* 7) FAQ ngắn */
+    {
+      ID:"faq", TYPE:"faq",
+      TITLE:"Câu hỏi thường gặp",
+      QUESTIONS:[
+        {"q":"Có cần đặt cọc không?","a":"Tùy dòng xe, thường từ 500.000đ hoặc giữ giấy tờ."},
+        {"q":"Có giao xe ban đêm không?","a":"Có, hỗ trợ 24/7 khu vực nội thành Hà Nội."},
+        {"q":"Nếu mất xe thì sao?","a":"Liên hệ ngay để được hướng dẫn xử lý theo hợp đồng."}
+      ],
+      MORE_LINK:{"label":"Xem thêm FAQ","href":"faq.html"}
+    },
+
+    /* 8) CTA cuối trang + liên hệ nhanh */
+    {
+      ID:"cta", TYPE:"cta_block",
+      TITLE:"Cần thuê xe ngay hôm nay?",
+      DESC:"Gọi hoặc nhắn Zalo, giao xe tận nơi trong 20–40 phút.",
+      BUTTONS:[
+        {"label":"📞 Gọi ngay","href":"tel:+84942467674"},
+        {"label":"💬 Chat Zalo","href":"https://zalo.me/0942467674"},
+        {"label":"📍 Xem bản đồ","href":"https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc"}
+      ],
+      SECONDARY:[
+        {"label":"🏷️ Xem bảng giá","href":"banggia.html"},
+        {"label":"📑 Thủ tục thuê","href":"thutuc.html"}
+      ]
+    },
+
+    /* 9) Liên hệ + bản đồ (tùy chọn) */
+    {
+      ID:"lienhe", TYPE:"contact_block",
+      TITLE:"Liên hệ & thông tin",
+      ADDRESS:"112 Nguyễn Văn Cừ, Long Biên, Hà Nội",
+      PHONE:"+84942467674",
+      EMAIL:"thuexemaynguyentu@gmail.com",
+      MAP_EMBED:true,
+      FORM:{ENABLED:true, FIELDS:["Họ tên","Số điện thoại","Nội dung"], SUBMIT_TEXT:"Gửi liên hệ"}
+    }
+  ],
+
+  RULES:{
+    LINKS_POLICY:"Body chỉ dùng URL đã khai hoặc trang .html trong MENU; không thêm domain mới.",
+    ICONS_REQUIRED:true,
+    NO_CONTENT_CHANGES_FOR_MENU_FOOTER:true
+  }
+}
 
   FOOTER:{
     STYLE:"glass", GRID:{DESKTOP:6, TABLET:3, MOBILE:2},
